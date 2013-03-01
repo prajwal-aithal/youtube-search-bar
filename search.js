@@ -18,7 +18,7 @@ extrabutton.setAttribute("class", "search-btn-component search-button yt-uix-but
 extrabutton.setAttribute("role", "button");
 extrabutton.onclick=extraButtonClick;
 var extraspan = document.createElement('img');
-extraspan.src="http://github.com/prajwal-aithal/youtube-search-bar/search.png";
+extraspan.src="https://github.com/prajwal-aithal/youtube-search-bar/blob/master/search.png";
 //extraspan.appendChild(document.createTextNode("Search"));
 extrabutton.appendChild(extraspan);
 
