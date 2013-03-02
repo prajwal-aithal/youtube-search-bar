@@ -73,4 +73,4 @@ var extradiv= document.createElement('div');
 extradiv.setAttribute("id", "search-results-holder");
 
 /* Adding the extra division to display video results... */
-$('#masthead-expanded').after(extradiv);
+$('#yt-masthead-container').after(extradiv);
