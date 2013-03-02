@@ -39,3 +39,9 @@ To use this extension follow the steps given below.
 5. Then click on "Load unpacked extension...".
 6. Go to the extracted directory in the dialog box that appears and click open.
 7. Select "Allow in incognito mode" if you want the extension in incognito mode as well (see Requirements section above).
+
+Todo
+----
+
+1. Add final design code, and finalize the color scheme.
+2. Decide the exact placement of the new division in the entire document tree.
