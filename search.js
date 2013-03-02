@@ -1,10 +1,53 @@
 
 function extraButtonClick(){
 	if($("#masthead-search-term").val() != ""){
-		alert($("input#masthead-search-term").val());
-	}
-	else{
-		alert("Enter something!!!");
+		console.log("The current content is..." + $("#search-results-holder").innerHTML);
+		$("#search-results-holder").empty();
+		var qlink = "https://gdata.youtube.com/feeds/api/videos?q=" + encodeURIComponent($("#masthead-search-term").val());
+		qlink = qlink+"&alt=json";
+		$.get(qlink, function(data) {
+				var jdata = (data.feed).entry;
+				var jlen = jdata.length;
+				console.log(jdata);
+				var innerdiv = document.createElement('div');
+				innerdiv.setAttribute("class", "holder-class");
+				var inlink;
+				var inimg;
+				var intitle;
+				for(i=0;i<jlen;i++){
+					intitle = jdata[i].title.$t;
+					inimg = (jdata[i].media$group.media$thumbnail)[3].url;
+					inlink = (jdata[i].link)[0].href;
+					console.log(intitle+ " - "+inlink+" - "+inimg);
+					var resultdiv = document.createElement('div');
+					resultdiv.setAttribute("class", "result-class");
+					var imgdiv = document.createElement('div');
+					imgdiv.setAttribute("class", "img-class");
+					var resultimg = document.createElement('img');
+					resultimg.setAttribute("class", "result-image-class");
+					resultimg.setAttribute("src", inimg);
+					imgdiv.appendChild(resultimg);
+					var linkdiv = document.createElement('div');
+					linkdiv.setAttribute("class", "link-class");
+					var resultlink = document.createElement('a');
+					resultlink.setAttribute("href", inlink);
+					resultlink.setAttribute("title", intitle);
+					resultlink.appendChild(document.createTextNode(intitle.substring(0,38)));
+					linkdiv.appendChild(resultlink);
+					resultdiv.appendChild(imgdiv);
+					resultdiv.appendChild(linkdiv);
+					innerdiv.appendChild(resultdiv);
+				}
+				$("#masthead-search-term").html("");
+				if(jlen == 0){
+					var resultdiv = document.createElement('div');
+					resultdiv.setAttribute("class", "result-class");
+					resultdiv.appendChild(document.createTextNode("No results found.. :("));
+					innerdiv.appendChild(resultdiv);
+				}
+				console.log("The current content is..." + $("#search-results-holder").val());
+				$("#search-results-holder").append(innerdiv);
+		});
 	}
 	return false;
 }
@@ -27,7 +70,7 @@ $('#search-btn').after(extrabutton);
 
 /* Designing the extra division to display video results... */
 var extradiv= document.createElement('div');
-extradiv.appendChild(document.createTextNode("Hello... Here I am!!!"));
+extradiv.setAttribute("id", "search-results-holder");
 
 /* Adding the extra division to display video results... */
 $('#masthead-expanded').after(extradiv);
