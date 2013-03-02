@@ -15,14 +15,19 @@ Usage
 -----
 1. Install the extension as explained below.
 2. Whenever you load a page on www.youtube.com, a new button is loaded to the immediate right of the search input box.
-3. Enter your query in the search input box, and then click on this new button instead of the default search button.
+3. Enter your query in the search input box, and then click on this new button (or press tab and then enter) instead of the 
+default search button.
 4. The results are displayed in the same page.
 5. The ">>" button towards the far right end of the search division can be clicked to get the next couple of results.
 6. Similarly "<<" button towards the far left end of the search division can be clicked to get the previous results.
-7. **Note that enter key is not yet supported by this extension**. i.e. clicking enter will load results in a different page.
-8. Given below is a sample screenshot of the new search experience.
+7. **Note that enter key is not supported by this extension**. i.e. clicking enter will load results in a different page.
+8. Given below are sample screenshots of the new search experience.
 
-![Alt text](sample.png "Sample Screenshot")
+Initial Screen
+![Alt text](sample-init.png "Initial screen")
+
+After using the easy-search to search for videos related to "outer space".
+![Alt text](sample-search.png "After using the easy-search")
 
 Requirements
 ------------
