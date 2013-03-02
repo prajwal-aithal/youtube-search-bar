@@ -4,6 +4,7 @@ var jlen=0;
 var advance=5;
 function extraButtonClick(){
 	if($("#masthead-search-term").val() != ""){
+		extradiv.setAttribute("style", "height:110px;");
 		console.log("The current content is..." + $("#search-results-holder").innerHTML);
 		$("#search-results-holder").empty();
 		var qlink = "https://gdata.youtube.com/feeds/api/videos?q=" + encodeURIComponent($("#masthead-search-term").val());
