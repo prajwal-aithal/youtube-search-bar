@@ -10,7 +10,6 @@ page containing the search results, thus affecting your viewing experience.
 This chrome extension facilitates a better search experience, by displaying the top 25 results for a query on the same page,
 without affecting the current running video.
 
-**Work is in progress. The GUI is not yet ready.**
 
 Usage
 -----
@@ -18,8 +17,10 @@ Usage
 2. Whenever you load a page on www.youtube.com, a new button is loaded to the immediate right of the search input box.
 3. Enter your query in the search input box, and then click on this new button instead of the default search button.
 4. The results are displayed in the same page.
-5. **Note that enter key is not yet supported by this extension**. i.e. clicking enter will load results in a different page.
-6. Given below is a sample screenshot of the new search experience.
+5. The ">>" button towards the far right end of the search division can be clicked to get the next couple of results.
+6. Similarly "<<" button towards the far left end of the search division can be clicked to get the previous results.
+7. **Note that enter key is not yet supported by this extension**. i.e. clicking enter will load results in a different page.
+8. Given below is a sample screenshot of the new search experience.
 
 ![Alt text](sample.png "Sample Screenshot")
 
