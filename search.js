@@ -1,6 +1,7 @@
 var begin=0;
 var jdata;
 var jlen=0;
+var advance=5;
 function extraButtonClick(){
 	if($("#masthead-search-term").val() != ""){
 		console.log("The current content is..." + $("#search-results-holder").innerHTML);
@@ -36,7 +37,7 @@ function extraButtonClick(){
 				var inlink;
 				var inimg;
 				var intitle;
-				for(i=begin;i<begin+6&&i<jlen;i++){
+				for(i=begin;i<begin+advance&&i<jlen;i++){
 					intitle = jdata[i].title.$t;
 					inimg = (jdata[i].media$group.media$thumbnail)[3].url;
 					inlink = (jdata[i].link)[0].href;
@@ -67,7 +68,7 @@ function extraButtonClick(){
 					resultdiv.appendChild(document.createTextNode("No results found.. :("));
 					innerdiv.appendChild(resultdiv);
 				}
-				begin = begin+6;
+				begin = begin+advance;
 				console.log("The current content is..." + $("#search-results-holder").val());
 				$("#search-results-holder").append(innerdiv);
 				$("#search-results-holder").append(nextdiv);
@@ -104,10 +105,10 @@ function displayFront(){
 		var inlink;
 		var inimg;
 		var intitle;
-		if(begin+6 < jlen){
-			begin = begin+6;
+		if(begin+advance < jlen){
+			begin = begin+advance;
 		}
-		for(i=begin;i<begin+6&&i<jlen;i++){
+		for(i=begin;i<begin+advance&&i<jlen;i++){
 			intitle = jdata[i].title.$t;
 			inimg = (jdata[i].media$group.media$thumbnail)[3].url;
 			inlink = (jdata[i].link)[0].href;
@@ -170,10 +171,10 @@ function displayBack(){
 		var inlink;
 		var inimg;
 		var intitle;
-		if(begin-6 >= 0){
-			begin = begin-6;
+		if(begin-advance >= 0){
+			begin = begin-advance;
 		}
-		for(i=begin;i<begin+6&&i<jlen;i++){
+		for(i=begin;i<begin+advance&&i<jlen;i++){
 			intitle = jdata[i].title.$t;
 			inimg = (jdata[i].media$group.media$thumbnail)[3].url;
 			inlink = (jdata[i].link)[0].href;
@@ -226,6 +227,7 @@ $('#search-btn').after(extrabutton);
 /* Designing the extra division to display video results... */
 var extradiv= document.createElement('div');
 extradiv.setAttribute("id", "search-results-holder");
+extradiv.setAttribute("class", "search-result-holder-class");
 
 /* Adding the extra division to display video results... */
 $('#yt-masthead-container').after(extradiv);
