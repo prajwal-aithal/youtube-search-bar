@@ -46,10 +46,14 @@ function extraButtonClick(){
 					resultdiv.setAttribute("class", "result-class");
 					var imgdiv = document.createElement('div');
 					imgdiv.setAttribute("class", "img-class");
+					var imglink = document.createElement('a');
+					imglink.href = inlink;
+					imglink.setAttribute("title", intitle);
 					var resultimg = document.createElement('img');
 					resultimg.setAttribute("class", "result-image-class");
 					resultimg.setAttribute("src", inimg);
-					imgdiv.appendChild(resultimg);
+					imglink.appendChild(resultimg);
+					imgdiv.appendChild(imglink);
 					var linkdiv = document.createElement('div');
 					linkdiv.setAttribute("class", "link-class");
 					var resultlink = document.createElement('a');
@@ -117,10 +121,14 @@ function displayFront(){
 			resultdiv.setAttribute("class", "result-class");
 			var imgdiv = document.createElement('div');
 			imgdiv.setAttribute("class", "img-class");
+			var imglink = document.createElement('a');
+			imglink.href = inlink;
+			imglink.setAttribute("title", intitle);
 			var resultimg = document.createElement('img');
 			resultimg.setAttribute("class", "result-image-class");
 			resultimg.setAttribute("src", inimg);
-			imgdiv.appendChild(resultimg);
+			imglink.appendChild(resultimg);
+			imgdiv.appendChild(imglink);
 			var linkdiv = document.createElement('div');
 			linkdiv.setAttribute("class", "link-class");
 			var resultlink = document.createElement('a');
@@ -183,10 +191,14 @@ function displayBack(){
 			resultdiv.setAttribute("class", "result-class");
 			var imgdiv = document.createElement('div');
 			imgdiv.setAttribute("class", "img-class");
+			var imglink = document.createElement('a');
+			imglink.href = inlink;
+			imglink.setAttribute("title", intitle);
 			var resultimg = document.createElement('img');
 			resultimg.setAttribute("class", "result-image-class");
 			resultimg.setAttribute("src", inimg);
-			imgdiv.appendChild(resultimg);
+			imglink.appendChild(resultimg);
+			imgdiv.appendChild(imglink);
 			var linkdiv = document.createElement('div');
 			linkdiv.setAttribute("class", "link-class");
 			var resultlink = document.createElement('a');
@@ -212,7 +224,7 @@ function displayBack(){
 /* Designing the extra search button... */
 var extrabutton = document.createElement('button');
 extrabutton.setAttribute("id","easy-search-btn");
-extrabutton.setAttribute("tabindex", "3");
+extrabutton.setAttribute("tabindex", "2");
 extrabutton.setAttribute("class", "search-btn-component search-button yt-uix-button yt-uix-button-default");
 extrabutton.setAttribute("role", "button");
 extrabutton.onclick=extraButtonClick;
@@ -220,7 +232,7 @@ var extraspan = document.createElement('img');
 extraspan.src="https://github.com/prajwal-aithal/youtube-search-bar/raw/master/search.png";
 //extraspan.appendChild(document.createTextNode("Search"));
 extrabutton.appendChild(extraspan);
-
+$('#search-btn').attr("tabindex", "3");
 /* Adding the extra search button... */
 $('#search-btn').after(extrabutton);
 
