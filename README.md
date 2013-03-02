@@ -25,7 +25,7 @@ Usage
 
 Requirements
 ------------
-This extension uses the tab api. **It does not save or keep track of your history**.
+This extension uses the tab api. **It does not save or keep track of your browsing history**.
 
 Installation
 ------------
