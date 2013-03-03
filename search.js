@@ -38,10 +38,31 @@ function extraButtonClick(){
 				var inlink;
 				var inimg;
 				var intitle;
+				var intime;
+				var timestr;
 				for(i=begin;i<begin+advance&&i<jlen;i++){
 					intitle = jdata[i].title.$t;
 					inimg = (jdata[i].media$group.media$thumbnail)[3].url;
 					inlink = (jdata[i].link)[0].href;
+					intime = jdata[i].media$group.yt$duration.seconds;
+					if(Math.floor((parseInt(intime)/3600)) < 10){
+						timestr = "0"+(Math.floor((parseInt(intime)/3600))).toString()+":";
+					}
+					else{
+						timestr = (Math.floor((parseInt(intime)/3600))).toString()+":";
+					}
+					if(Math.floor(((parseInt(intime)%3600)/60)) < 10){
+						timestr = timestr + "0" + (Math.floor(((parseInt(intime)%3600)/60))).toString()+":";
+					}
+					else{
+						timestr = timestr + (Math.floor(((parseInt(intime)%3600)/60))).toString()+":"
+					}
+					if(Math.floor(((parseInt(intime)%3600)%60)) < 10){
+						timestr = timestr + "0" + (Math.floor(((parseInt(intime)%3600)%60))).toString();
+					}
+					else{
+						timestr = timestr + (Math.floor(((parseInt(intime)%3600)%60))).toString();
+					}
 					console.log(intitle+ " - "+inlink+" - "+inimg);
 					var resultdiv = document.createElement('div');
 					resultdiv.setAttribute("class", "result-class");
@@ -61,6 +82,9 @@ function extraButtonClick(){
 					resultlink.href = inlink;
 					resultlink.setAttribute("title", intitle);
 					resultlink.appendChild(document.createTextNode(intitle.substring(0,38)));
+					resultlink.appendChild(document.createElement('br'));
+					resultlink.appendChild(document.createElement('br'));
+					resultlink.appendChild(document.createTextNode(timestr));
 					linkdiv.appendChild(resultlink);
 					resultdiv.appendChild(imgdiv);
 					resultdiv.appendChild(linkdiv);
@@ -110,6 +134,8 @@ function displayFront(){
 		var inlink;
 		var inimg;
 		var intitle;
+		var timestr;
+		var intime;
 		if(begin+advance < jlen){
 			begin = begin+advance;
 		}
@@ -117,6 +143,25 @@ function displayFront(){
 			intitle = jdata[i].title.$t;
 			inimg = (jdata[i].media$group.media$thumbnail)[3].url;
 			inlink = (jdata[i].link)[0].href;
+			intime = jdata[i].media$group.yt$duration.seconds;
+			if(Math.floor((parseInt(intime)/3600)) < 10){
+				timestr = "0"+(Math.floor((parseInt(intime)/3600))).toString()+":";
+			}
+			else{
+				timestr = (Math.floor((parseInt(intime)/3600))).toString()+":";
+			}
+			if(Math.floor(((parseInt(intime)%3600)/60)) < 10){
+				timestr = timestr + "0" + (Math.floor(((parseInt(intime)%3600)/60))).toString()+":";
+			}
+			else{
+				timestr = timestr + (Math.floor(((parseInt(intime)%3600)/60))).toString()+":"
+			}
+			if(Math.floor(((parseInt(intime)%3600)%60)) < 10){
+				timestr = timestr + "0" + (Math.floor(((parseInt(intime)%3600)%60))).toString();
+			}
+			else{
+				timestr = timestr + (Math.floor(((parseInt(intime)%3600)%60))).toString();
+			}
 			console.log(intitle+ " - "+inlink+" - "+inimg);
 			var resultdiv = document.createElement('div');
 			resultdiv.setAttribute("class", "result-class");
@@ -136,6 +181,9 @@ function displayFront(){
 			resultlink.href = inlink;
 			resultlink.setAttribute("title", intitle);
 			resultlink.appendChild(document.createTextNode(intitle.substring(0,38)));
+			resultlink.appendChild(document.createElement('br'));
+			resultlink.appendChild(document.createElement('br'));
+			resultlink.appendChild(document.createTextNode(timestr));
 			linkdiv.appendChild(resultlink);
 			resultdiv.appendChild(imgdiv);
 			resultdiv.appendChild(linkdiv);
@@ -180,6 +228,8 @@ function displayBack(){
 		var inlink;
 		var inimg;
 		var intitle;
+		var timestr;
+		var intime;
 		if(begin-advance >= 0){
 			begin = begin-advance;
 		}
@@ -187,6 +237,25 @@ function displayBack(){
 			intitle = jdata[i].title.$t;
 			inimg = (jdata[i].media$group.media$thumbnail)[3].url;
 			inlink = (jdata[i].link)[0].href;
+			intime = jdata[i].media$group.yt$duration.seconds;
+			if(Math.floor((parseInt(intime)/3600)) < 10){
+				timestr = "0"+(Math.floor((parseInt(intime)/3600))).toString()+":";
+			}
+			else{
+				timestr = (Math.floor((parseInt(intime)/3600))).toString()+":";
+			}
+			if(Math.floor(((parseInt(intime)%3600)/60)) < 10){
+				timestr = timestr + "0" + (Math.floor(((parseInt(intime)%3600)/60))).toString()+":";
+			}
+			else{
+				timestr = timestr + (Math.floor(((parseInt(intime)%3600)/60))).toString()+":"
+			}
+			if(Math.floor(((parseInt(intime)%3600)%60)) < 10){
+				timestr = timestr + "0" + (Math.floor(((parseInt(intime)%3600)%60))).toString();
+			}
+			else{
+				timestr = timestr + (Math.floor(((parseInt(intime)%3600)%60))).toString();
+			}
 			console.log(intitle+ " - "+inlink+" - "+inimg);
 			var resultdiv = document.createElement('div');
 			resultdiv.setAttribute("class", "result-class");
@@ -206,6 +275,9 @@ function displayBack(){
 			resultlink.href = inlink;
 			resultlink.setAttribute("title", intitle);
 			resultlink.appendChild(document.createTextNode(intitle.substring(0,38)));
+			resultlink.appendChild(document.createElement('br'));
+			resultlink.appendChild(document.createElement('br'));
+			resultlink.appendChild(document.createTextNode(timestr));
 			linkdiv.appendChild(resultlink);
 			resultdiv.appendChild(imgdiv);
 			resultdiv.appendChild(linkdiv);
