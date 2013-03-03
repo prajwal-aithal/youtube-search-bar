@@ -20,18 +20,18 @@
 	float:right;
 	text-align: center;
 	width: 2.5%;
-	height: 90px;
+	height: 110px;
 }
 
 .previous-button-class{
 	float:left;
 	text-align: center;
 	width: 2.5%;
-	height: 90px;
+	height: 110px;
 }
 
 .display-button{
-	height: 90px;
+	height: 110px;
 	text-align: center;
 }
 
@@ -40,6 +40,7 @@
 	float: left;
 	width: 240px;
 	height: 90px;
+	color: #F5F5F5;
 	text-align: center;
 }
 

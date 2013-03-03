@@ -12,7 +12,10 @@ function extraButtonClick(){
 		begin = 0;
 		$.get(qlink, function(data) {
 				jdata = (data.feed).entry;
-				jlen = jdata.length;
+				if(jdata == null)
+					jlen = 0;
+				else
+					jlen = jdata.length;
 				console.log(jdata);
 				var innerdiv = document.createElement('div');
 				innerdiv.setAttribute("class", "holder-class");
